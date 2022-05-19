@@ -1,0 +1,49 @@
+﻿<Page x:Class="Plechaty_GUI.Pages.ProductDetailPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="ProductDetailPage">
+    <Grid>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="60"/>
+                <RowDefinition Height="60"/>
+                <RowDefinition Height="210"/>
+                <RowDefinition Height="60"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="360"/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Border Width="330" Height="330" Grid.Row="1" Grid.RowSpan="3" HorizontalAlignment="Left" VerticalAlignment="Top" Background="White">
+                <Border.OpacityMask>
+                    <VisualBrush>
+                        <VisualBrush.Visual>
+                            <Border CornerRadius="16" Width="330" Height="330" Background="White"/>
+                        </VisualBrush.Visual>
+                    </VisualBrush>
+                </Border.OpacityMask>
+                <Image Source="{Binding Image_url}"/>
+            </Border>
+            <Label Content="Domů" Width="60" FontSize="14" VerticalAlignment="Top" HorizontalAlignment="Left" Foreground="Black"/>
+            <Label Content=">" Width="20" Margin="60 0 0 0" FontSize="14" VerticalAlignment="Top" HorizontalAlignment="Left" Foreground="Black"/>
+            <Label Content="{Binding Category}" Width="120" Margin="80 0 0 0" FontSize="14" VerticalAlignment="Top" HorizontalAlignment="Left" Foreground="{Binding Lipstick}"/>
+            <Label Content=">" Width="20" Margin="200 0 0 0" FontSize="14" VerticalAlignment="Top" HorizontalAlignment="Left" Foreground="Black"/>
+            <Label Content="{Binding Name}" Width="120" Margin="220 0 0 0" FontSize="14" VerticalAlignment="Top" HorizontalAlignment="Left" Foreground="Black"/>
+            <Label Content="{Binding Name}" Grid.Row="1" Grid.Column="1" FontSize="14" FontWeight="Bold" VerticalAlignment="Top" HorizontalAlignment="Left" Foreground="{Binding Lipstick}"/>
+            <Label Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="2" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="0 20 0 0" Visibility="{Binding Visibility}">
+                <TextBlock Text="{Binding PriceString}"/>
+            </Label>
+            <Label Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="2" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="0 20 0 0" Visibility="{Binding VisibilityNegated}">
+                <TextBlock Text="{Binding PriceString}" TextDecorations="Strikethrough"/>
+            </Label>
+            <Label Content="{Binding SpecialString}" Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="2" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="40 20 0 0" Foreground="Red"/>
+            <TextBlock Text="{Binding Description}" Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="2" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="4 0 0 0" TextWrapping="Wrap"/>
+            <Button Content="Koupit" Width="80" Height="40" Background="{Binding Lipstick}" Foreground="White" Grid.Row="3" Grid.Column="1" VerticalAlignment="Bottom" HorizontalAlignment="Left" Tag="{Binding Id_p}" Click="onBuyButtonClick" MouseEnter="onBuyButtonMouseEnter" MouseLeave="onBuyButtonMouseLeave"/>
+        </Grid>
+    </Grid>
+</Page>

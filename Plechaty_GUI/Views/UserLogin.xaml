@@ -1,0 +1,54 @@
+﻿<Window x:Class="Plechaty_GUI.Views.UserLogin"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Plechaty_GUI.Views"
+        mc:Ignorable="d" WindowStartupLocation="CenterScreen" WindowStyle="None" ResizeMode="NoResize" BorderThickness="1"
+        Title="Uživatelské přihlášení" Height="320" Width="200">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+
+        <!-- Close -->
+        <Button
+                Grid.Column="10"
+                VerticalAlignment="Center"
+                HorizontalAlignment="Right"
+                Content="X"
+                Foreground="#AAAAAA"
+                Width="40"
+                Height="40"
+                BorderBrush="Transparent"
+                BorderThickness="0"
+                Click="CloseLogin"
+                FontWeight="Bold"
+                Margin="0 0 10 0"
+                Cursor="Hand">
+
+            <Button.Style>
+                <Style TargetType="Button" BasedOn="{StaticResource {x:Type Button}}">
+                    <Style.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="Foreground" Value="#ffffff"/>
+                            <Setter Property="Background" Value="#ff0033"/>
+                        </Trigger>
+                    </Style.Triggers>
+                </Style>
+            </Button.Style>
+        </Button>
+        <Label Name="loginLabel" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="0" Content="Přihlášení" FontSize="16"/>
+        <Border Name="emailBorder" Grid.Row="1" Background="Silver" CornerRadius="16" Width="160" Height="40">
+            <TextBox Name="emailTextBox" GotFocus="onEmailTextBoxGotFocus" LostFocus="onEmailTextBoxLostFocus" Background="Silver" Text="Email" Height="16" Width="140" Margin="10 0 10 0" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="White" MaxLength="24" MaxLines="1"/>
+        </Border>
+        <Border Name="passwordBorder" Grid.Row="2" Background="Silver" CornerRadius="16" Width="160" Height="40">
+            <PasswordBox Name="passwordTextBox" Password="Heslo" GotFocus="onPasswordTextBoxGotFocus" LostFocus="onPasswordTextBoxGotLostFocus" Background="Silver" PasswordChar="*" Height="16" Width="140" Margin="10 0 10 0" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="White" MaxLength="24"/>
+        </Border>
+        <Button Name="loginButton" Click="onLoginButtonClick" MouseEnter="onLoginButtonMouseEnter" MouseLeave="onLoginButtonMouseLeave" Content="Přihlásit" Grid.Row="3" Width="80" Height="40" VerticalAlignment="Top"/>
+        <Label Name="createAccountLabel" MouseDown="onCreateAccountLabelMouseDown" MouseEnter="onCreateAccountLabelMouseEnter" MouseLeave="onCreateAccountLabelMouseLeave" Cursor="Hand" Content="Nemám účet" HorizontalAlignment="Center" VerticalAlignment="Bottom" Grid.Row="4" Margin="0 0 0 12"/>
+    </Grid>
+</Window>
