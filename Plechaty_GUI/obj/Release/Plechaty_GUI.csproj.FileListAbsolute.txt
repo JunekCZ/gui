@@ -54,4 +54,5 @@ C:\Users\Junek\source\repos\Plechaty_GUI\Plechaty_GUI\obj\Release\Plechaty_GUI.c
 C:\Users\Junek\source\repos\Plechaty_GUI\Plechaty_GUI\obj\Release\Plechaty_GUI.csproj.CopyComplete
 C:\Users\Junek\source\repos\Plechaty_GUI\Plechaty_GUI\obj\Release\Plechaty_GUI.exe
 C:\Users\Junek\source\repos\Plechaty_GUI\Plechaty_GUI\obj\Release\Plechaty_GUI.pdb
-C:\Users\Junek\source\repos\Plechaty_GUI\Plechaty_GUI\obj\Release\Plechaty_GUI.csprojAssemblyReference.cache
+C:\Users\Junek\source\repos\Plechaty_GUI\Plechaty_GUI\obj\Release\Plechaty_GUI.csproj.AssemblyReference.cache
+C:\Users\Junek\source\repos\Plechaty_GUI\Plechaty_GUI\obj\Release\Plechaty_GUI.csproj.SuggestedBindingRedirects.cache
